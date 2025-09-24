@@ -41,7 +41,7 @@ jobs:
       - name: Deploy Docs Status Pending
         run: python ./scripts/deploy_docs_status.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           COMMIT_SHA: ${{ github.event.workflow_run.head_sha }}
           RUN_ID: ${{ github.run_id }}
 
@@ -54,7 +54,7 @@ jobs:
           path: ./site/
           pattern: docs-site
           merge-multiple: true
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.TOKEN }}
           run-id: ${{ github.event.workflow_run.id }}
       - name: Deploy to Cloudflare Pages
         # hashFiles returns an empty string if there are no files
@@ -71,7 +71,7 @@ jobs:
       - name: Comment Deploy
         run: python ./scripts/deploy_docs_status.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
           COMMIT_SHA: ${{ github.event.workflow_run.head_sha }}
           RUN_ID: ${{ github.run_id }}
