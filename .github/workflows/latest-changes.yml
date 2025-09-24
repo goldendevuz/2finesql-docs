@@ -30,7 +30,7 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_enabled == 'true' }}
         with:
           limit-access-to-actor: true
-      - uses: goldendevuz/latest-changes@0.4.0
+      - uses: tiangolo/latest-changes@0.4.0
         with:
           token: ${{ secrets.TOKEN }}
           latest_changes_file: docs/release-notes.md
