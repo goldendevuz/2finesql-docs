@@ -14,7 +14,7 @@ You are encouraged to write tests for your application and update your finesql v
 
 If you think you found a vulnerability, and even if you are not sure about it, please report it right away by sending an email to: security@gold.mohir.cloud. Please try to be as explicit as possible, describing all the steps and example code to reproduce the security issue.
 
-I (the author, [@goldendevuz](https://twitter.com/goldendevuz)) will review it thoroughly and get back to you.
+I (the author, [@goldendevuz](https://telegram.com/goldendevuz)) will review it thoroughly and get back to you.
 
 ## Public Discussions
 

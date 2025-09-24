@@ -16,11 +16,11 @@ The main thing you can do is try **FineSQL** out and see if this library API des
 
 Knowing if it's useful or if you find any obvious problem with its design would be helpful.
 
-## Subscribe to the FastAPI and Friends newsletter
+## Subscribe to the FineSQL and Friends newsletter
 
-You can subscribe to the (infrequent) <a href="https://finesql.mohir.cloud/newsletter/" class="external-link" target="_blank">**FastAPI and friends**</a> to stay updated about:
+You can subscribe to the (infrequent) <a href="https://finesql.mohir.cloud/newsletter/" class="external-link" target="_blank">**FineSQL and friends**</a> to stay updated about:
 
-* News about FastAPI and friends, including FineSQL 🚀
+* News about FineSQL and friends, including FineSQL 🚀
 * Guides 📝
 * Features ✨
 * Breaking changes 🚨
@@ -49,18 +49,18 @@ You can:
 * <a href="https://github.com/goldendevuz" class="external-link" target="_blank">Follow me on **GitHub**</a>.
     * See other Open Source projects I have created that could help you.
     * Follow me to see when I create a new Open Source project.
-* <a href="https://twitter.com/goldendevuz" class="external-link" target="_blank">Follow me on **Twitter**</a>.
+* <a href="https://telegram.com/goldendevuz" class="external-link" target="_blank">Follow me on **Telegram**</a>.
     * Tell me how you use FineSQL (I love to hear that).
     * Hear when I make announcements or release new tools.
 * <a href="https://www.linkedin.com/in/goldendevuz/" class="external-link" target="_blank">Connect with me on **Linkedin**</a>.
-    * Hear when I make announcements or release new tools (although I use Twitter more often 🤷‍♂).
+    * Hear when I make announcements or release new tools (although I use Telegram more often 🤷‍♂).
 * Read what I write (or follow me) on <a href="https://dev.to/goldendevuz" class="external-link" target="_blank">**Dev.to**</a> or <a href="https://medium.com/@goldendevuz" class="external-link" target="_blank">**Medium**</a>.
     * Read other ideas, articles, and read about tools I have created.
     * Follow me to read when I publish something new.
 
 ## Tweet about **FineSQL**
 
-<a href="https://twitter.com/compose/tweet?text=I'm loving FineSQL because... https://github.com/goldendevuz/finesql cc: @goldendevuz" class="external-link" target="_blank">Tweet about **FineSQL**</a> and let me and others know why you like it. 🎉
+<a href="https://telegram.com/compose/tweet?text=I'm loving FineSQL because... https://github.com/goldendevuz/finesql cc: @goldendevuz" class="external-link" target="_blank">Tweet about **FineSQL**</a> and let me and others know why you like it. 🎉
 
 I love to hear about how **FineSQL** is being used, what you have liked in it, in which project/company are you using it, etc.
 
@@ -216,7 +216,7 @@ If you can help me with that, **you are helping me maintain FineSQL** and making
 
 ## Join the chat
 
-Join the 👥 <a href="https://discord.gg/VQjSZaeJmf" class="external-link" target="_blank">FastAPI and Friends Discord chat server</a> 👥 and hang out with others in the community. There's an `#finesql` channel.
+Join the 👥 <a href="https://discord.gg/VQjSZaeJmf" class="external-link" target="_blank">FineSQL and Friends Discord chat server</a> 👥 and hang out with others in the community. There's an `#finesql` channel.
 
 /// tip
 
@@ -241,16 +241,5 @@ On the other side, there are thousands of users in the chat, so there's a high c
 You can also financially support the author (me) through <a href="https://github.com/sponsors/goldendevuz" class="external-link" target="_blank">GitHub sponsors</a>.
 
 There you could buy me a coffee ☕️ to say thanks. 😄
-
-## Help the tools that power FineSQL
-
-As you have seen in the documentation, FineSQL stands on the shoulders of giants, FineIO, which, in turn, is compatible with and uses fineio or Trio.
-
-You can check out those project and see how to help them:
-
-* <a href="https://github.com/agronholm/fineio" class="external-link" target="_blank">FineIO</a>
-* <a href="https://github.com/python-trio/trio" class="external-link" target="_blank">Trio</a>
-
----
 
 Thanks! 🚀
