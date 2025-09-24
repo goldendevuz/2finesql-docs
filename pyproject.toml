@@ -30,7 +30,6 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "fineio >=3.4.0,<5.0",
     "typing_extensions >=4.8.0; python_version < '3.10'"
 ]
 
@@ -114,7 +113,7 @@ ignore = [
 # "__init__.py" = ["F401"]
 
 [tool.ruff.lint.isort]
-known-third-party = ["finesql", "fineio"]
+known-third-party = ["finesql"]
 
 [tool.ruff.lint.pyupgrade]
 # Preserve types, even if a file imports `from __future__ import annotations`.
