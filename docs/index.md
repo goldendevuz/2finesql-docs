@@ -1,3 +1,7 @@
+<style>
+.md-content .md-typeset h1 { display: none; }
+</style>
+
 # FineSQL ORM
 
 ![FineSQL](https://img.shields.io/badge/FineSQL-0.0.1-red?style=for-the-badge)
