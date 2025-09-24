@@ -40,10 +40,6 @@ Repository = "https://github.com/goldendevuz/finesql"
 Issues = "https://github.com/goldendevuz/finesql/issues"
 Changelog = "https://finesql.mohir.cloud/release-notes/"
 
-[tool.pdm]
-version = { source = "file", path = "finesql/__init__.py" }
-distribution = true
-
 [tool.pdm.build]
 source-includes = [
     "tests/",
