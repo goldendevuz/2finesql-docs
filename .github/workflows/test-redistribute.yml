@@ -15,8 +15,8 @@ jobs:
     strategy:
       matrix:
         package:
-          - asyncer
-          - asyncer-slim
+          - finesql
+          - finesql-slim
     steps:
       - name: Dump GitHub context
         env:
@@ -31,26 +31,26 @@ jobs:
         run: pip install build
       - name: Build source distribution
         env:
-          TIANGOLO_BUILD_PACKAGE: ${{ matrix.package }}
+          goldendevuz_BUILD_PACKAGE: ${{ matrix.package }}
         run: python -m build --sdist
       - name: Decompress source distribution
         run: |
           cd dist
-          tar xvf asyncer*.tar.gz
+          tar xvf finesql*.tar.gz
       - name: Install test dependencies
         run: |
-          cd dist/asyncer*/
+          cd dist/finesql*/
           pip install -r requirements-tests.txt
         env:
-          TIANGOLO_BUILD_PACKAGE: ${{ matrix.package }}
+          goldendevuz_BUILD_PACKAGE: ${{ matrix.package }}
       - name: Run source distribution tests
         run: |
-          cd dist/asyncer*/
+          cd dist/finesql*/
           bash scripts/test.sh
       - name: Build wheel distribution
         run: |
           cd dist
-          pip wheel --no-deps asyncer*.tar.gz
+          pip wheel --no-deps finesql*.tar.gz
 
   # https://github.com/marketplace/actions/alls-green#why
   test-redistribute-alls-green:  # This job does nothing and is only used for the branch protection

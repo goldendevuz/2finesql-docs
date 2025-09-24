@@ -1,6 +1,6 @@
 # Runnify - Async Code With Arguments
 
-Continuing with the last example, let's see the first use case where **Asyncer** could be useful. 🤓
+Continuing with the last example, let's see the first use case where **FineSQL** could be useful. 🤓
 
 ## Async Main Function with Arguments
 
@@ -25,7 +25,7 @@ Let's say that now you want your async `main()` function to take arguments:
 
 ## Runnify with Arguments
 
-Now you can use `asyncer.runnify()` to run this function passing arguments:
+Now you can use `finesql.runnify()` to run this function passing arguments:
 
 ```Python hl_lines="3"
 # Code above omitted 👆
@@ -44,9 +44,9 @@ Now you can use `asyncer.runnify()` to run this function passing arguments:
 
 </details>
 
-`asyncer.runnify()` takes the **async function** you want to call, and then it returns another function that **takes the positional and keyword arguments** needed, in this case it's just `name="World"`.
+`finesql.runnify()` takes the **async function** you want to call, and then it returns another function that **takes the positional and keyword arguments** needed, in this case it's just `name="World"`.
 
-When you call that function with the arguments, it actually uses `anyio.run()` underneath to run the async function with the arguments.
+When you call that function with the arguments, it actually uses `fineio.run()` underneath to run the async function with the arguments.
 
 And here's the advantage of this approach, you get **better typing support**.
 
@@ -62,7 +62,7 @@ You will also get **mypy** support if you use it.
 
 ## Run the Program in the Command Line
 
-If you run that, you will see the expected result, almost the same as with AnyIO, it will **wait for 1 second** and then print `Hello, World`:
+If you run that, you will see the expected result, almost the same as with FineIO, it will **wait for 1 second** and then print `Hello, World`:
 
 <div class="termy">
 

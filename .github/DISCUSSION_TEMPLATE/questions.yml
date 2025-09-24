@@ -3,7 +3,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for your interest in Asyncer! 🚀
+        Thanks for your interest in FineSQL! 🚀
 
         Please follow these instructions, fill every question, and do every step. 🙏
 
@@ -13,7 +13,7 @@ body:
 
         All that, on top of all the incredible help provided by a bunch of community members that give a lot of their time to come here and help others.
 
-        If more Asyncer users came to help others like them just a little bit more, it would be much less effort for them (and you and me 😅).
+        If more FineSQL users came to help others like them just a little bit more, it would be much less effort for them (and you and me 😅).
 
         By asking questions in a structured way (following this) it will be much easier to help you.
 
@@ -30,15 +30,15 @@ body:
           required: true
         - label: I used the GitHub search to find a similar question and didn't find it.
           required: true
-        - label: I searched the Asyncer documentation, with the integrated search.
+        - label: I searched the FineSQL documentation, with the integrated search.
           required: true
-        - label: I already searched in Google "How to X in Asyncer" and didn't find any information.
+        - label: I already searched in Google "How to X in FineSQL" and didn't find any information.
           required: true
         - label: I already read and followed all the tutorial in the docs and didn't find an answer.
           required: true
-        - label: I already checked if it is not related to Asyncer but to [AnyIO](https://github.com/agronholm/anyio).
+        - label: I already checked if it is not related to FineSQL but to [FineIO](https://github.com/agronholm/fineio).
           required: true
-        - label: I already checked if it is not related to Asyncer but to [Trio](https://github.com/python-trio/trio).
+        - label: I already checked if it is not related to FineSQL but to [Trio](https://github.com/python-trio/trio).
           required: true
   - type: checkboxes
     id: help
@@ -49,7 +49,7 @@ body:
 
           * Read open issues with questions until I find 2 issues where I can help someone and add a comment to help there.
           * I already hit the "watch" button in this repository to receive notifications and I commit to help at least 2 people that ask questions in the future.
-          * Review one Pull Request by downloading the code and following all the review process](https://asyncer.tiangolo.com/help/#review-pull-requests).
+          * Review one Pull Request by downloading the code and following all the review process](https://finesql.mohir.cloud/help/#review-pull-requests).
 
       options:
         - label: I commit to help with one of those options 👆
@@ -66,8 +66,8 @@ body:
       placeholder: |
         import time
 
-        import anyio
-        from asyncer import asyncify
+        import fineio
+        from finesql import sqlify
 
 
         def do_sync_work(name: str):
@@ -76,11 +76,11 @@ body:
 
 
         async def main():
-            message = await asyncify(do_sync_work)(name="World")
+            message = await sqlify(do_sync_work)(name="World")
             print(message)
 
 
-        anyio.run(main)
+        fineio.run(main)
       render: python
     validations:
       required: true
@@ -93,7 +93,7 @@ body:
 
         Write a short description telling me what you are doing, what you expect to happen, and what is currently happening.
       placeholder: |
-        * Call a sync function from async code with asyncify().
+        * Call a sync function from async code with sqlify().
         * Print the result value.
         * It only printed the value once, I expected it to call that function many times.
     validations:
@@ -117,16 +117,16 @@ body:
       label: Operating System Details
       description: You can add more details about your operating system here, in particular if you chose "Other".
   - type: input
-    id: asyncer-version
+    id: finesql-version
     attributes:
-      label: asyncer Version
+      label: finesql Version
       description: |
-        What Asyncer version are you using?
+        What FineSQL version are you using?
 
-        You can find the Asyncer version with:
+        You can find the FineSQL version with:
 
         ```bash
-        python -c "import asyncer; print(asyncer.__version__)"
+        python -c "import finesql; print(finesql.__version__)"
         ```
     validations:
       required: true

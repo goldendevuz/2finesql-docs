@@ -1,10 +1,10 @@
 # Repository Management
 
-Here's a short description of how the Asyncer repository is managed and maintained.
+Here's a short description of how the FineSQL repository is managed and maintained.
 
 ## Owner
 
-I, <a href="https://github.com/tiangolo" target="_blank">@tiangolo</a>, am the creator and owner of the Asyncer repository. 🤓
+I, <a href="https://github.com/goldendevuz" target="_blank">@goldendevuz</a>, am the creator and owner of the FineSQL repository. 🤓
 
 I normally give the final review to each PR before merging them. I make the final decisions on the project, I'm the <a href="https://en.wikipedia.org/wiki/Benevolent_dictator_for_life" class="external-link" target="_blank"><abbr title="Benevolent Dictator For Life">BDFL</abbr></a>. 😅
 
@@ -42,4 +42,4 @@ Additional to them, there's a large community of people helping each other and g
 
 External contributions are very welcome and appreciated, including answering questions, submitting PRs, etc. 🙇‍♂️
 
-There are many ways to [help maintain Asyncer](./help.md){.internal-link target=_blank}.
+There are many ways to [help maintain FineSQL](./help.md){.internal-link target=_blank}.

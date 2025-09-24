@@ -1,7 +1,7 @@
 INHERIT: ./mkdocs.maybe-insiders.yml
-site_name: Asyncer
-site_description: Asyncer, async and await, focused on developer experience.
-site_url: https://asyncer.tiangolo.com/
+site_name: FineSQL
+site_description: FineSQL, async and await, focused on developer experience.
+site_url: https://finesql.mohir.cloud/
 theme:
   name: material
   palette:
@@ -9,17 +9,19 @@ theme:
     toggle:
       icon: material/lightbulb-auto
       name: Switch to light mode
-  - media: '(prefers-color-scheme: light)'
+
+  - media: "(prefers-color-scheme: light)"
     scheme: default
-    primary: orange
-    accent: indigo
+    primary: indigo
+    accent: blue grey
     toggle:
       icon: material/lightbulb
       name: Switch to dark mode
-  - media: '(prefers-color-scheme: dark)'
+      
+  - media: "(prefers-color-scheme: dark)"
     scheme: slate
-    primary: orange
-    accent: indigo
+    primary: indigo
+    accent: blue grey
     toggle:
       icon: material/lightbulb-outline
       name: Switch to system preference
@@ -51,8 +53,8 @@ theme:
   logo: img/icon-white.svg
   favicon: img/favicon.png
   language: en
-repo_name: fastapi/asyncer
-repo_url: https://github.com/fastapi/asyncer
+repo_name: goldendevuz/finesql
+repo_url: https://github.com/goldendevuz/finesql
 plugins:
   # Material for MkDocs
   search:
@@ -63,7 +65,7 @@ plugins:
     - members: data/members.yml
 
 nav:
-  - Asyncer: index.md
+  - FineSQL: index.md
   - Tutorial - User Guide:
     - tutorial/index.md
     - tutorial/install.md
@@ -71,7 +73,7 @@ nav:
     - tutorial/runnify.md
     - tutorial/soonify.md
     - tutorial/soonify-return.md
-    - tutorial/asyncify.md
+    - tutorial/sqlify.md
     - tutorial/syncify.md
     - tutorial/syncify-no-raise.md
   - Resources:
@@ -133,17 +135,17 @@ markdown_extensions:
 extra:
   social:
   - icon: fontawesome/brands/github-alt
-    link: https://github.com/fastapi/asyncer
+    link: https://github.com/goldendevuz/finesql
   - icon: fontawesome/brands/twitter
-    link: https://twitter.com/tiangolo
+    link: https://twitter.com/goldendevuz
   - icon: fontawesome/brands/linkedin
-    link: https://www.linkedin.com/in/tiangolo
+    link: https://www.linkedin.com/in/goldendevuz
   - icon: fontawesome/brands/dev
-    link: https://dev.to/tiangolo
+    link: https://dev.to/goldendevuz
   - icon: fontawesome/brands/medium
-    link: https://medium.com/@tiangolo
+    link: https://medium.com/@goldendevuz
   - icon: fontawesome/solid/globe
-    link: https://tiangolo.com
+    link: https://gold.mohir.cloud
 
 extra_css:
   - css/termynal.css

@@ -5,7 +5,7 @@ docs:
         - docs/**
         - docs_src/**
       - all-globs-to-all-files:
-        - '!asyncer/**'
+        - '!finesql/**'
         - '!pyproject.toml'
 
 internal:
@@ -20,5 +20,5 @@ internal:
         - requirements*.txt
       - all-globs-to-all-files:
         - '!docs/**'
-        - '!asyncer/**'
+        - '!finesql/**'
         - '!pyproject.toml'

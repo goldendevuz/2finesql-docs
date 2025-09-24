@@ -14,31 +14,31 @@ from typing import (
 )
 from warnings import warn
 
-from asyncer._compat import run_sync
+from finesql._compat import run_sync
 
 if sys.version_info >= (3, 10):
     from typing import ParamSpec
 else:
     from typing_extensions import ParamSpec
 
-import anyio
-import anyio.from_thread
-import anyio.to_thread
+import fineio
+import fineio.from_thread
+import fineio.to_thread
 import sniffio
-from anyio._core._eventloop import threadlocals
-from anyio.abc import TaskGroup as _TaskGroup
+from fineio._core._eventloop import threadlocals
+from fineio.abc import TaskGroup as _TaskGroup
 
 
-# This was obtained with: from anyio._core._eventloop import get_asynclib
-# Removed in https://github.com/agronholm/anyio/pull/429
-# Released in AnyIO 4.x.x
-# The new function is anyio._core._eventloop.get_async_backend but that returns a
+# This was obtained with: from fineio._core._eventloop import get_asynclib
+# Removed in https://github.com/agronholm/fineio/pull/429
+# Released in FineIO 4.x.x
+# The new function is fineio._core._eventloop.get_async_backend but that returns a
 # class, not a module to extract the TaskGroup class from.
 def get_asynclib(asynclib_name: Union[str, None] = None) -> Any:
     if asynclib_name is None:
         asynclib_name = sniffio.current_async_library()
 
-    modulename = "anyio._backends._" + asynclib_name
+    modulename = "fineio._backends._" + asynclib_name
     try:
         return sys.modules[modulename]
     except KeyError:  # pragma: no cover
@@ -52,7 +52,7 @@ T = TypeVar("T")
 
 class PendingType:
     def __repr__(self) -> str:
-        return "AsyncerPending"
+        return "FineSQLPending"
 
 
 Pending = PendingType()
@@ -71,10 +71,10 @@ class SoonValue(Generic[T]):
         if isinstance(self._stored_value, PendingType):
             raise PendingValueException(
                 "The return value of this task is still pending. Maybe you forgot to "
-                "access it after the async with asyncer.create_task_group() block. "
+                "access it after the async with finesql.create_task_group() block. "
                 "If you need to access values of async tasks inside the same task "
                 "group, you probably need a different approach, for example with "
-                "AnyIO Streams."
+                "FineIO Streams."
             )
         return self._stored_value
 
@@ -99,7 +99,7 @@ class TaskGroup(_TaskGroup):
         Use it like this:
 
         ```Python
-        async with asyncer.create_task_group() as task_group:
+        async with finesql.create_task_group() as task_group:
             async def do_work(arg1, arg2, kwarg1="", kwarg2="") -> str:
                 # Do work
                 return "Some result value"
@@ -117,11 +117,11 @@ class TaskGroup(_TaskGroup):
 
         If you try to access the `soon_value.value` inside the `async with` block,
         before it has the actual return value, it will raise a an exception
-        `asyncer.PendingValueException`.
+        `finesql.PendingValueException`.
 
         If you think you need to access the return values inside the `async with` block,
         there's a high chance that you really need a different approach, for example
-        using an AnyIO Stream.
+        using an FineIO Stream.
 
         But either way, if you have checkpoints inside the `async with` block (you have
         some `await` there), one or more of the `SoonValue` objects you might have
@@ -132,10 +132,10 @@ class TaskGroup(_TaskGroup):
         async def do_work(name: str) -> str:
             return f"Hello {name}"
 
-        async with asyncer.create_task_group() as task_group:
+        async with finesql.create_task_group() as task_group:
             result1 = task_group.soonify(do_work)(name="task 1")
             result2 = task_group.soonify(do_work)(name="task 2")
-            await anyio.sleep(0)
+            await fineio.sleep(0)
             if not result1.pending:
                 print(result1.value)
             if not result2.pending:
@@ -184,7 +184,7 @@ def create_task_group() -> "TaskGroup":
     """
     Create a task group used to start multiple concurrent tasks with async functions.
 
-    `asyncer.create_task_group()` is different from `anyio.create_task_group()` in that
+    `finesql.create_task_group()` is different from `fineio.create_task_group()` in that
     it creates an extended `TaskGroup` object that includes the `task_group.soonify()`
     method.
     """
@@ -199,7 +199,7 @@ def create_task_group() -> "TaskGroup":
 
 def runnify(
     async_function: Callable[T_ParamSpec, Coroutine[Any, Any, T_Retval]],
-    backend: str = "asyncio",
+    backend: str = "fineio",
     backend_options: Optional[Dict[str, Any]] = None,
 ) -> Callable[T_ParamSpec, T_Retval]:
     """
@@ -212,7 +212,7 @@ def runnify(
 
     The current thread must not be already running an event loop.
 
-    This calls `anyio.run()` underneath.
+    This calls `fineio.run()` underneath.
 
     Use it like this:
 
@@ -221,7 +221,7 @@ def runnify(
         return f"Hello {name}"
 
 
-    result = asyncer.runnify(program)(name="World")
+    result = finesql.runnify(program)(name="World")
     print(result)
     ```
 
@@ -229,7 +229,7 @@ def runnify(
 
     `async_function`: an async function to call
     `backend`: name of the asynchronous event loop implementation - currently either
-        `asyncio` or `trio`
+        `fineio` or `trio`
     `backend_options` keyword arguments to call the backend `run()` implementation with
 
     ## Return
@@ -246,7 +246,7 @@ def runnify(
     def wrapper(*args: T_ParamSpec.args, **kwargs: T_ParamSpec.kwargs) -> T_Retval:
         partial_f = functools.partial(async_function, *args, **kwargs)
 
-        return anyio.run(partial_f, backend=backend, backend_options=backend_options)
+        return fineio.run(partial_f, backend=backend, backend_options=backend_options)
 
     return wrapper
 
@@ -258,23 +258,23 @@ def syncify(
     """
     Take an async function and create a regular one that receives the same keyword and
     positional arguments, and that when called, calls the original async function in
-    the main async loop from the worker thread using `anyio.to_thread.run()`.
+    the main async loop from the worker thread using `fineio.to_thread.run()`.
 
     By default this is expected to be used from a worker thread. For example inside
-    some function passed to `asyncify()`.
+    some function passed to `sqlify()`.
 
     But if you set `raise_sync_error` to `False`, you can also use this function
     in a non-async context: without an async event loop. For example, from a
     blocking/regular function called at the top level of a Python file. In that case,
     if it is not being called from inside a worker thread started from an async context
-    (e.g. this is not called from a function that was called with `asyncify()`) it will
-    run `async_function` in a new async event loop with `anyio.run()`.
+    (e.g. this is not called from a function that was called with `sqlify()`) it will
+    run `async_function` in a new async event loop with `fineio.run()`.
 
     This functionality with `raise_sync_error` is there only to allow using
     `syncify()` in codebases that are used by async code in some cases and by blocking
     code in others. For example, during migrations from blocking code to async code.
 
-    Internally, `asyncer.syncify()` uses the same `anyio.from_thread.run()`, but it
+    Internally, `finesql.syncify()` uses the same `fineio.from_thread.run()`, but it
     supports keyword arguments additional to positional arguments and it adds better
     support for tooling (e.g. editor autocompletion and inline errors) for the
     arguments and return value of the function.
@@ -308,29 +308,29 @@ def syncify(
         current_async_module = (
             getattr(threadlocals, "current_async_backend", None)
             or
-            # TODO: remove when deprecating AnyIO 3.x
+            # TODO: remove when deprecating FineIO 3.x
             getattr(threadlocals, "current_async_module", None)
         )
         partial_f = functools.partial(async_function, *args, **kwargs)
         if current_async_module is None and raise_sync_error is False:
-            return anyio.run(partial_f)
-        return anyio.from_thread.run(partial_f)
+            return fineio.run(partial_f)
+        return fineio.from_thread.run(partial_f)
 
     return wrapper
 
 
-def asyncify(
+def sqlify(
     function: Callable[T_ParamSpec, T_Retval],
     *,
     abandon_on_cancel: bool = False,
     cancellable: Union[bool, None] = None,
-    limiter: Optional[anyio.CapacityLimiter] = None,
+    limiter: Optional[fineio.CapacityLimiter] = None,
 ) -> Callable[T_ParamSpec, Awaitable[T_Retval]]:
     """
     Take a blocking function and create an async one that receives the same
     positional and keyword arguments, and that when called, calls the original function
-    in a worker thread using `anyio.to_thread.run_sync()`. Internally,
-    `asyncer.asyncify()` uses the same `anyio.to_thread.run_sync()`, but it supports
+    in a worker thread using `fineio.to_thread.run_sync()`. Internally,
+    `finesql.sqlify()` uses the same `fineio.to_thread.run_sync()`, but it supports
     keyword arguments additional to positional arguments and it adds better support for
     autocompletion and inline errors for the arguments of the function called and the
     return value.
@@ -346,7 +346,7 @@ def asyncify(
             # Do work
             return "Some result"
 
-    result = await to_thread.asyncify(do_work)("spam", "ham", kwarg1="a", kwarg2="b")
+    result = await to_thread.sqlify(do_work)("spam", "ham", kwarg1="a", kwarg2="b")
     print(result)
     ```
 
@@ -366,8 +366,8 @@ def asyncify(
     if cancellable is not None:
         abandon_on_cancel = cancellable
         warn(
-            "The `cancellable=` keyword argument to `asyncer.asyncify()` is "
-            "deprecated since Asyncer 0.0.8, following AnyIO 4.1.0. "
+            "The `cancellable=` keyword argument to `finesql.sqlify()` is "
+            "deprecated since FineSQL 0.0.8, following FineIO 4.1.0. "
             "Use `abandon_on_cancel=` instead.",
             DeprecationWarning,
             stacklevel=2,

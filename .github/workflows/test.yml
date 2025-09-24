@@ -33,9 +33,9 @@ jobs:
           - "3.11"
           - "3.12"
           - "3.13"
-        anyio-version:
-          - anyio-v3
-          - anyio-v4
+        fineio-version:
+          - fineio-v3
+          - fineio-v4
       fail-fast: false
     steps:
       - uses: actions/checkout@v5
@@ -59,14 +59,14 @@ jobs:
           limit-access-to-actor: true
       - name: Install Dependencies
         run: uv pip install -r requirements-tests.txt
-      - name: Install AnyIO v3
-        if: matrix.anyio-version == 'anyio-v3'
-        run: uv pip install --upgrade "anyio>=3.4.0,<4.0"
-      - name: Install AnyIO v4
-        if: matrix.anyio-version == 'anyio-v4'
-        run: uv pip install --upgrade "anyio>=4.0.0,<5.0"
+      - name: Install FineIO v3
+        if: matrix.fineio-version == 'fineio-v3'
+        run: uv pip install --upgrade "fineio>=3.4.0,<4.0"
+      - name: Install FineIO v4
+        if: matrix.fineio-version == 'fineio-v4'
+        run: uv pip install --upgrade "fineio>=4.0.0,<5.0"
       - name: Lint
-        if: matrix.anyio-version == 'anyio-v4'
+        if: matrix.fineio-version == 'fineio-v4'
         run: bash scripts/lint.sh
       - run: mkdir coverage
       - name: Test
@@ -77,7 +77,7 @@ jobs:
       - name: Store coverage files
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-${{ matrix.python-version }}-${{ matrix.anyio-version }}
+          name: coverage-${{ matrix.python-version }}-${{ matrix.fineio-version }}
           path: coverage
           include-hidden-files: true
 

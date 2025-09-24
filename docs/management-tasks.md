@@ -1,6 +1,6 @@
 # Repository Management Tasks
 
-These are the tasks that can be performed to manage the Asyncer repository by [team members](./management.md#team){.internal-link target=_blank}.
+These are the tasks that can be performed to manage the FineSQL repository by [team members](./management.md#team){.internal-link target=_blank}.
 
 /// tip
 
@@ -8,9 +8,9 @@ This section is useful only to a handful of people, team members with permission
 
 ///
 
-...so, you are a [team member of Asyncer](./management.md#team){.internal-link target=_blank}? Wow, you are so cool! 😎
+...so, you are a [team member of FineSQL](./management.md#team){.internal-link target=_blank}? Wow, you are so cool! 😎
 
-You can help with everything on [Help Asyncer - Get Help](./help.md){.internal-link target=_blank} the same ways as external contributors. But additionally, there are some tasks that only you (as part of the team) can perform.
+You can help with everything on [Help FineSQL - Get Help](./help.md){.internal-link target=_blank} the same ways as external contributors. But additionally, there are some tasks that only you (as part of the team) can perform.
 
 Here are the general instructions for the tasks you can perform.
 
@@ -36,7 +36,7 @@ Try to avoid using bitter sarcasm or potentially passive-aggressive comments. If
 
 Try to be as specific and objective as possible, avoid generalizations.
 
-For conversations that are more difficult, for example to reject a PR, you can ask me (@tiangolo) to handle it directly.
+For conversations that are more difficult, for example to reject a PR, you can ask me (@goldendevuz) to handle it directly.
 
 ## Edit PR Titles
 
@@ -47,15 +47,15 @@ For conversations that are more difficult, for example to reject a PR, you can a
 * Try to make the title descriptive about what it achieves. If it's a feature, try to describe it, for example `Add support for teleporting` instead of `Create TeleportAdapter class`.
 * Do not finish the title with a period (`.`).
 
-Once the PR is merged, a GitHub Action (<a href="https://github.com/tiangolo/latest-changes" class="external-link" target="_blank">latest-changes</a>) will use the PR title to update the latest changes automatically.
+Once the PR is merged, a GitHub Action (<a href="https://github.com/goldendevuz/latest-changes" class="external-link" target="_blank">latest-changes</a>) will use the PR title to update the latest changes automatically.
 
 So, having a nice PR title will not only look nice in GitHub, but also in the release notes. 📝
 
 ## Add Labels to PRs
 
-The same GitHub Action <a href="https://github.com/tiangolo/latest-changes" class="external-link" target="_blank">latest-changes</a> uses one label in the PR to decide the section in the release notes to put this PR in.
+The same GitHub Action <a href="https://github.com/goldendevuz/latest-changes" class="external-link" target="_blank">latest-changes</a> uses one label in the PR to decide the section in the release notes to put this PR in.
 
-Make sure you use a supported label from the <a href="https://github.com/tiangolo/latest-changes#using-labels" class="external-link" target="_blank">latest-changes list of labels</a>:
+Make sure you use a supported label from the <a href="https://github.com/goldendevuz/latest-changes#using-labels" class="external-link" target="_blank">latest-changes list of labels</a>:
 
 * `breaking`: Breaking Changes
     * Existing code will break if they update the version without changing their code. This rarely happens, so this label is not frequently used.
@@ -112,4 +112,4 @@ When a question in GitHub Discussions has been answered, mark the answer by clic
 
 Many of the current Discussion Questions were migrated from old issues. Many have the label `answered`, that means they were answered when they were issues, but now in GitHub Discussions, it's not known what is the actual response from the messages.
 
-You can filter discussions by <a href="https://github.com/fastapi/asyncer/discussions/categories/questions?discussions_q=category:Questions+is:open+is:unanswered" class="external-link" target="_blank">`Questions` that are `Unanswered`</a>.
+You can filter discussions by <a href="https://github.com/goldendevuz/finesql/discussions/categories/questions?discussions_q=category:Questions+is:open+is:unanswered" class="external-link" target="_blank">`Questions` that are `Unanswered`</a>.

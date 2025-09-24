@@ -5,7 +5,7 @@ from github import Github
 from pydantic import BaseModel, SecretStr
 from pydantic_settings import BaseSettings
 
-site_domain = "asyncer.tiangolo.com"
+site_domain = "finesql.mohir.cloud"
 
 
 class Settings(BaseSettings):

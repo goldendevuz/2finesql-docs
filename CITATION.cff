@@ -2,23 +2,22 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: Asyncer
+title: FineSQL
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
 authors:
-  - given-names: Sebastián
-    family-names: Ramírez
-    email: tiangolo@gmail.com
+  - given-names: Abdulmajid
+    family-names: Yunus
+    email: goldendevuz@gmail.com
 identifiers:
-repository-code: 'https://github.com/fastapi/asyncer'
-url: 'https://asyncer.tiangolo.com'
+repository-code: 'https://github.com/goldendevuz/finesql'
+url: 'https://finesql.mohir.cloud'
 abstract: >-
-  Asyncer, async and await, focused on developer experience.
+  FineSQL, async and await, focused on developer experience.
 keywords:
-  - asyncer
-  - anyio
+  - finesql
+  - fineio
   - trio
-  - asyncio
 license: MIT

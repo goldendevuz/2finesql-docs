@@ -1,11 +1,11 @@
 import time
 
-import anyio
-from asyncer import asyncify, syncify
+import fineio
+from finesql import sqlify, syncify
 
 
 async def do_async_work(name: str):
-    await anyio.sleep(1)
+    await fineio.sleep(1)
     return f"Hello, {name}"
 
 
@@ -16,7 +16,7 @@ def do_sync_work(name: str):
 
 
 async def main():
-    message = await asyncify(do_sync_work)(name="World")
+    message = await sqlify(do_sync_work)(name="World")
     print(message)
 
 
@@ -25,5 +25,5 @@ def sync_main():
     print(message)
 
 
-anyio.run(main)
+fineio.run(main)
 sync_main()

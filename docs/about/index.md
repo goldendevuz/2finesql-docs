@@ -1,3 +1,3 @@
 # About
 
-About **Asyncer** and how it is managed. 🤓
+About **FineSQL** and how it is managed. 🤓
