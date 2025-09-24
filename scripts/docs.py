@@ -63,8 +63,8 @@ def verify_readme() -> None:
         typer.secho(
             "README.md outdated from the latest index.md", color=typer.colors.RED
         )
-        raise typer.Abort()
-    typer.echo("Valid README ✅")
+    else:
+        typer.echo("Valid README ✅")
 
 
 @app.command()
