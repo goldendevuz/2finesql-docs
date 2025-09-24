@@ -1,3 +1,7 @@
+<style>
+.md-content .md-typeset h1 { display: none; }
+</style>
+
 # FineSQL ORM
 
 ![FineSQL](https://img.shields.io/badge/FineSQL-0.0.1-red?style=for-the-badge)
@@ -14,17 +18,26 @@ It provides simple table definitions, CRUD operations, and foreign key support w
 
 FineSQL requires only standard Python libraries and can be installed easily.
 
+
 === "pip"
 
-    ```bash
-    pip install finesql
+    <div class="termy">
+    ```console
+    $ pip install finesql
+    ---> 100%
+    Successfully installed finesql
     ```
+    </div>
 
 === "uv"
 
-    ```bash
-    uv add finesql
+    <div class="termy">
+    ```console
+    $ uv add finesql
+    ---> 100%
+    Successfully installed finesql
     ```
+    </div>
 
 ## Quick Start
 
