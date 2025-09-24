@@ -1,5 +1,3 @@
-INHERIT: ./mkdocs.maybe-insiders.yml
-
 site_name: FineSQL
 site_description: FineSQL, async and await, focused on developer experience.
 site_url: https://finesql.mohir.cloud/
