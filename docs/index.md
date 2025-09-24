@@ -1,116 +1,112 @@
-<style>
-.md-content .md-typeset h1 { display: none; }
-</style>
+# FineSQL ORM
 
-<p align="center">
-  <a href="https://finesql.mohir.cloud"></a>
-</p>
-<p align="center">
-    <em>FineSQL, async and await, focused on developer experience.</em>
-</p>
-<p align="center">
+![FineSQL](https://img.shields.io/badge/FineSQL-0.0.1-red?style=for-the-badge)
+![pytest](https://img.shields.io/badge/pytest-8.4.2-blue?style=for-the-badge)
+![icecream](https://img.shields.io/badge/icecream-2.1.8-orange?style=for-the-badge)
+![Purpose](https://img.shields.io/badge/purpose-learning-green?style=for-the-badge)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-yellow?style=for-the-badge)
 
-<a href="https://pypi.org/project/finesql" target="_blank">
-    <img src="https://img.shields.io/pypi/v/finesql?color=%2334D058&label=pypi%20package" alt="Package version">
-</a>
-</p>
-
----
-
-**Documentation**: <a href="https://finesql.mohir.cloud" target="_blank">https://finesql.mohir.cloud</a>
-
-**Source Code**: <a href="https://github.com/goldendevuz/finesql" target="_blank">https://github.com/goldendevuz/finesql</a>
-
----
-
-**FineSQL** is a small library built on top of <a href="https://fineio.readthedocs.io/en/stable/" class="external-link" target="_blank">FineIO</a>.
-
-**FineSQL** has a small number of utility functions that allow working with `async`, `await`, and concurrent code in a more convenient way under my (<a href="https://twitter.com/goldendevuz" class="external-link" target="_blank">@goldendevuz - Abdulmajid Yunus</a>) very opinionated and subjective point of view.
-
-The main goal of **FineSQL** is to improve **developer experience** by providing better support for **autocompletion** and **inline errors** in the editor, and **more certainty** that the code is **bug-free** by providing better support for type checking tools like **mypy**.
-
-**FineSQL** also tries to improve **convenience** and simplicity when working with **async** code **mixed** with regular <abbr title="synchronous code, code that is not async">**blocking code**</abbr>, allowing to use them together in a simpler way... again, under my very **subjective** point of view.
-
-## 🚨 Warning
-
-This small library only exists to be able to use these **utility functions** until (and if) they are integrated into **FineIO**.
-
-It will probably take some time for that to happen (or to be decided if it will be included or not).
-
-So I made this to be able to use these ideas right now. 🤓
-
-## Can I Use It?
-
-Yes 🎉 (but continue reading).
-
-You can use this and evaluate the **library API design** I'm proposing. It will probably be useful to know if it works and is useful for you (I hope so).
-
-But still, consider this lab material, expect it to change a bit. 🧪
-
-If you use it, **pin the exact FineSQL version** for your project, to make sure it all works.
-
-Have **tests** for your project (as you should, anyway). And **upgrade the version** once you know that the new version continues to work correctly.
-
-Still, it's **just 4 functions**, so there's not much to change, if you had to refactor your code to update something it would not be much.
-
-And if you don't want to add `finesql` as a dependency to your project, you can also just copy the main file and try out those functions, it's quite small (but in that case you won't get updates easily).
-
-## Requirements
-
-As **FineSQL** is based on **FineIO** it will be also installed automatically when you install **FineSQL**.
+FineSQL is a lightweight Python ORM built on top of `sqlite3` for educational purposes.  
+It provides simple table definitions, CRUD operations, and foreign key support while keeping the codebase minimal and easy to understand.
 
 ## Installation
 
-<div class="termy">
+FineSQL requires only standard Python libraries and can be installed easily.
 
-```console
-$ pip install finesql
----> 100%
-Successfully installed finesql fineio
+=== "pip"
+
+    ```bash
+    pip install finesql
+    ```
+
+=== "uv"
+
+    ```bash
+    uv add finesql
+    ```
+
+## Quick Start
+
+### 1. Define Tables
+
+```python
+from finesql import Database, Table, Column, ForeignKey
+
+class User(Table):
+    username = Column(str)
+    age = Column(int)
+
+class Post(Table):
+    title = Column(str)
+    body = Column(str)
+    author = ForeignKey(User)
 ```
 
-</div>
+### 2. Initialize Database
 
-## How to Use
+```python
+db = Database("app.db")
 
-You can read more about each of the use cases and utility functions in **FineSQL** in the <a href="https://finesql.mohir.cloud/tutorial/" class="external-link" target="_blank">tutorial</a>.
-
-As a sneak preview of one of the utilities, you can **call sync code from async code** using `sqlify()`:
-
-```Python
-import time
-
-import fineio
-from finesql import sqlify
-
-
-def do_sync_work(name: str):
-    time.sleep(1)
-    return f"Hello, {name}"
-
-
-async def main():
-    message = await sqlify(do_sync_work)(name="World")
-    print(message)
-
-
-fineio.run(main)
+db.create(User)
+db.create(Post)
 ```
 
-**FineSQL**'s `sqlify()` will use FineIO underneath to do *the smart thing*, avoid blocking the main **async** event loop, and run the **sync**/blocking function in a **worker thread**.
+### 3. Create Records
 
-### Editor Support
+```python
+# Create users
+alice = User(full_name="Alice Johnson", age=25)
+db.save(alice)
 
-Everything in **FineSQL** is designed to get the best **developer experience** possible, with the best editor support.
+robert = User(full_name="Robert Smith", age=30)
+db.save(robert)
 
-* **Autocompletion** for function arguments:
+# Create a post
+post = Post(title="Hello World", body="This is my first post", author=robert)
+db.save(post)
+```
 
-* **Autocompletion** for return values:
+### 4. Query Records
 
-* **Inline errors** in editor:
+```python
+# Get all users
+users = db.all(User)
+print(users)
 
-* Support for tools like **mypy**, that can help you verify that your **code is correct**, and prevent many bugs.
+# Get by id
+user1 = db.get(User, id=1)
+print(user1)
 
-## License
+# Filter by full_name (reuse first name)
+alice = db.get_by_field(User, field_name="full_name", value="Alice Johnson")
+print(alice)
 
-This project is licensed under the terms of the [MIT license](https://github.com/goldendevuz/finesql/blob/main/LICENSE).
+robert = db.get_by_field(User, field_name="full_name", value="Robert Smith")
+print(robert)
+```
+
+### 5. Update Records
+
+```python
+alice = db.get(User, id=1)
+alice.age = 26
+db.update(alice)
+```
+
+### 6. Delete Records
+
+```python
+db.delete(User, id=1)
+```
+
+## Relationships
+
+Foreign keys can be defined using `ForeignKey`.  
+For example, `Post` has an `author = ForeignKey(User)`.  
+When fetching posts, the related `User` instance will be automatically resolved:
+
+```python
+post = db.get(Post, id=1)
+print(post.author)
+```
