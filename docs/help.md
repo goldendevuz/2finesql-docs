@@ -1,10 +1,10 @@
-# Help Asyncer - Get Help
+# Help FineSQL - Get Help
 
-Do you like **Asyncer**?
+Do you like **FineSQL**?
 
-Would you like to help Asyncer, other users, and the author?
+Would you like to help FineSQL, other users, and the author?
 
-Or would you like to get help with **Asyncer**?
+Or would you like to get help with **FineSQL**?
 
 There are very simple ways to help (several involve just one or two clicks).
 
@@ -12,70 +12,70 @@ And there are several ways to get help too.
 
 ## Try It
 
-The main thing you can do is try **Asyncer** out and see if this library API design is **helpful** for you.
+The main thing you can do is try **FineSQL** out and see if this library API design is **helpful** for you.
 
 Knowing if it's useful or if you find any obvious problem with its design would be helpful.
 
 ## Subscribe to the FastAPI and Friends newsletter
 
-You can subscribe to the (infrequent) <a href="https://fastapi.tiangolo.com/newsletter/" class="external-link" target="_blank">**FastAPI and friends**</a> to stay updated about:
+You can subscribe to the (infrequent) <a href="https://finesql.mohir.cloud/newsletter/" class="external-link" target="_blank">**FastAPI and friends**</a> to stay updated about:
 
-* News about FastAPI and friends, including Asyncer 🚀
+* News about FastAPI and friends, including FineSQL 🚀
 * Guides 📝
 * Features ✨
 * Breaking changes 🚨
 * Tips and tricks ✅
 
-## Star **Asyncer** in GitHub
+## Star **FineSQL** in GitHub
 
-You can "star" Asyncer in GitHub (clicking the star button at the top right): <a href="https://github.com/fastapi/asyncer" class="external-link" target="_blank">https://github.com/fastapi/asyncer</a>. ⭐️
+You can "star" FineSQL in GitHub (clicking the star button at the top right): <a href="https://github.com/goldendevuz/finesql" class="external-link" target="_blank">https://github.com/goldendevuz/finesql</a>. ⭐️
 
 By adding a star, other users will be able to find it more easily and see that it has been already useful for others.
 
 ## Watch the GitHub repository for releases
 
-You can "watch" Asyncer in GitHub (clicking the "watch" button at the top right): <a href="https://github.com/fastapi/asyncer" class="external-link" target="_blank">https://github.com/fastapi/asyncer</a>. 👀
+You can "watch" FineSQL in GitHub (clicking the "watch" button at the top right): <a href="https://github.com/goldendevuz/finesql" class="external-link" target="_blank">https://github.com/goldendevuz/finesql</a>. 👀
 
 There you can select "Releases only".
 
-By doing it, you will receive notifications (in your email) whenever there's a new release (a new version) of **Asyncer** with bug fixes and new features.
+By doing it, you will receive notifications (in your email) whenever there's a new release (a new version) of **FineSQL** with bug fixes and new features.
 
 ## Connect with the author
 
-You can connect with <a href="https://tiangolo.com" class="external-link" target="_blank">me (Sebastián Ramírez / `tiangolo`)</a>, the author.
+You can connect with <a href="https://gold.mohir.cloud" class="external-link" target="_blank">me (Abdulmajid Yunus / `goldendevuz`)</a>, the author.
 
 You can:
 
-* <a href="https://github.com/tiangolo" class="external-link" target="_blank">Follow me on **GitHub**</a>.
+* <a href="https://github.com/goldendevuz" class="external-link" target="_blank">Follow me on **GitHub**</a>.
     * See other Open Source projects I have created that could help you.
     * Follow me to see when I create a new Open Source project.
-* <a href="https://twitter.com/tiangolo" class="external-link" target="_blank">Follow me on **Twitter**</a>.
-    * Tell me how you use Asyncer (I love to hear that).
+* <a href="https://twitter.com/goldendevuz" class="external-link" target="_blank">Follow me on **Twitter**</a>.
+    * Tell me how you use FineSQL (I love to hear that).
     * Hear when I make announcements or release new tools.
-* <a href="https://www.linkedin.com/in/tiangolo/" class="external-link" target="_blank">Connect with me on **Linkedin**</a>.
+* <a href="https://www.linkedin.com/in/goldendevuz/" class="external-link" target="_blank">Connect with me on **Linkedin**</a>.
     * Hear when I make announcements or release new tools (although I use Twitter more often 🤷‍♂).
-* Read what I write (or follow me) on <a href="https://dev.to/tiangolo" class="external-link" target="_blank">**Dev.to**</a> or <a href="https://medium.com/@tiangolo" class="external-link" target="_blank">**Medium**</a>.
+* Read what I write (or follow me) on <a href="https://dev.to/goldendevuz" class="external-link" target="_blank">**Dev.to**</a> or <a href="https://medium.com/@goldendevuz" class="external-link" target="_blank">**Medium**</a>.
     * Read other ideas, articles, and read about tools I have created.
     * Follow me to read when I publish something new.
 
-## Tweet about **Asyncer**
+## Tweet about **FineSQL**
 
-<a href="https://twitter.com/compose/tweet?text=I'm loving Asyncer because... https://github.com/fastapi/asyncer cc: @tiangolo" class="external-link" target="_blank">Tweet about **Asyncer**</a> and let me and others know why you like it. 🎉
+<a href="https://twitter.com/compose/tweet?text=I'm loving FineSQL because... https://github.com/goldendevuz/finesql cc: @goldendevuz" class="external-link" target="_blank">Tweet about **FineSQL**</a> and let me and others know why you like it. 🎉
 
-I love to hear about how **Asyncer** is being used, what you have liked in it, in which project/company are you using it, etc.
+I love to hear about how **FineSQL** is being used, what you have liked in it, in which project/company are you using it, etc.
 
 ## Help others with questions in GitHub
 
 You can try and help others with their questions in:
 
-* <a href="https://github.com/fastapi/asyncer/discussions/categories/questions?discussions_q=category%3AQuestions+is%3Aunanswered" class="external-link" target="_blank">GitHub Discussions</a>
-* <a href="https://github.com/fastapi/asyncer/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aquestion+-label%3Aanswered+" class="external-link" target="_blank">GitHub Issues</a>
+* <a href="https://github.com/goldendevuz/finesql/discussions/categories/questions?discussions_q=category%3AQuestions+is%3Aunanswered" class="external-link" target="_blank">GitHub Discussions</a>
+* <a href="https://github.com/goldendevuz/finesql/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aquestion+-label%3Aanswered+" class="external-link" target="_blank">GitHub Issues</a>
 
 In many cases you might already know the answer for those questions. 🤓
 
 Just remember, the most important point is: try to be kind. People come with their frustrations and in many cases don't ask in the best way, but try as best as you can to be kind. 🤗
 
-The idea is for the **Asyncer** community to be kind and welcoming. At the same time, don't accept bullying or disrespectful behavior towards others. We have to take care of each other.
+The idea is for the **FineSQL** community to be kind and welcoming. At the same time, don't accept bullying or disrespectful behavior towards others. We have to take care of each other.
 
 ---
 
@@ -118,7 +118,7 @@ If they reply, there's a high chance you would have solved their problem, congra
 
 ## Watch the GitHub repository
 
-You can "watch" Asyncer in GitHub (clicking the "watch" button at the top right): <a href="https://github.com/fastapi/asyncer" class="external-link" target="_blank">https://github.com/fastapi/asyncer</a>. 👀
+You can "watch" FineSQL in GitHub (clicking the "watch" button at the top right): <a href="https://github.com/goldendevuz/finesql" class="external-link" target="_blank">https://github.com/goldendevuz/finesql</a>. 👀
 
 If you select "Watching" instead of "Releases only" you will receive notifications when someone creates a new issue or question. You can also specify that you only want to be notified about new issues, or discussions, or PRs, etc.
 
@@ -126,7 +126,7 @@ Then you can try and help them solve those questions.
 
 ## Ask Questions
 
-You can <a href="https://github.com/fastapi/asyncer/issues/new/choose" class="external-link" target="_blank">create a new issue</a> in the GitHub repository, for example to:
+You can <a href="https://github.com/goldendevuz/finesql/issues/new/choose" class="external-link" target="_blank">create a new issue</a> in the GitHub repository, for example to:
 
 * Ask a **question** or ask about a **problem**.
 * Suggest a new **feature**.
@@ -199,9 +199,9 @@ You can [contribute](contributing.md){.internal-link target=_blank} to the sourc
     * Make sure to add tests.
     * Make sure to add documentation if it's relevant.
 
-## Help Maintain Asyncer
+## Help Maintain FineSQL
 
-Help me maintain **Asyncer**! 🤓
+Help me maintain **FineSQL**! 🤓
 
 There's a lot of work to do, and for most of it, **YOU** can do it.
 
@@ -210,17 +210,17 @@ The main tasks that you can do right now are:
 * [Help others with questions in GitHub](#help-others-with-questions-in-github){.internal-link target=_blank} (see the section above).
 * [Review Pull Requests](#review-pull-requests){.internal-link target=_blank} (see the section above).
 
-Those two tasks are what **consume time the most**. That's the main work of maintaining Asyncer.
+Those two tasks are what **consume time the most**. That's the main work of maintaining FineSQL.
 
-If you can help me with that, **you are helping me maintain Asyncer** and making sure it keeps **advancing faster and better**. 🚀
+If you can help me with that, **you are helping me maintain FineSQL** and making sure it keeps **advancing faster and better**. 🚀
 
 ## Join the chat
 
-Join the 👥 <a href="https://discord.gg/VQjSZaeJmf" class="external-link" target="_blank">FastAPI and Friends Discord chat server</a> 👥 and hang out with others in the community. There's an `#asyncer` channel.
+Join the 👥 <a href="https://discord.gg/VQjSZaeJmf" class="external-link" target="_blank">FastAPI and Friends Discord chat server</a> 👥 and hang out with others in the community. There's an `#finesql` channel.
 
 /// tip
 
-For questions, ask them in <a href="https://github.com/fastapi/asyncer/discussions/new?category=questions" class="external-link" target="_blank">GitHub Discussions</a>, there's a much better chance you will receive help there.
+For questions, ask them in <a href="https://github.com/goldendevuz/finesql/discussions/new?category=questions" class="external-link" target="_blank">GitHub Discussions</a>, there's a much better chance you will receive help there.
 
 Use the chat only for other general conversations.
 
@@ -238,17 +238,17 @@ On the other side, there are thousands of users in the chat, so there's a high c
 
 ## Sponsor the author
 
-You can also financially support the author (me) through <a href="https://github.com/sponsors/tiangolo" class="external-link" target="_blank">GitHub sponsors</a>.
+You can also financially support the author (me) through <a href="https://github.com/sponsors/goldendevuz" class="external-link" target="_blank">GitHub sponsors</a>.
 
 There you could buy me a coffee ☕️ to say thanks. 😄
 
-## Help the tools that power Asyncer
+## Help the tools that power FineSQL
 
-As you have seen in the documentation, Asyncer stands on the shoulders of giants, AnyIO, which, in turn, is compatible with and uses asyncio or Trio.
+As you have seen in the documentation, FineSQL stands on the shoulders of giants, FineIO, which, in turn, is compatible with and uses fineio or Trio.
 
 You can check out those project and see how to help them:
 
-* <a href="https://github.com/agronholm/anyio" class="external-link" target="_blank">AnyIO</a>
+* <a href="https://github.com/agronholm/fineio" class="external-link" target="_blank">FineIO</a>
 * <a href="https://github.com/python-trio/trio" class="external-link" target="_blank">Trio</a>
 
 ---

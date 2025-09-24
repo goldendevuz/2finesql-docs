@@ -1,14 +1,14 @@
 # Contributing
 
-First, you might want to see the basic ways to [help Asyncer and get help](help.md){.internal-link target=_blank}.
+First, you might want to see the basic ways to [help FineSQL and get help](help.md){.internal-link target=_blank}.
 
 ## Developing
 
-If you already cloned the <a href="https://github.com/fastapi/asyncer" class="external-link" target="_blank">asyncer repository</a> and you want to deep dive in the code, here are some guidelines to set up your environment.
+If you already cloned the <a href="https://github.com/goldendevuz/finesql" class="external-link" target="_blank">finesql repository</a> and you want to deep dive in the code, here are some guidelines to set up your environment.
 
 ### Virtual Environment
 
-Follow the instructions to create and activate a virtual environment as described in the <a href="https://fastapi.tiangolo.com/virtual-environments/" class="external-link" target="_blank">FastAPI page on Virtual Environments</a> for the internal code of `asyncer`.
+Follow the instructions to create and activate a virtual environment as described in the <a href="https://finesql.mohir.cloud/virtual-environments/" class="external-link" target="_blank">FastAPI page on Virtual Environments</a> for the internal code of `finesql`.
 
 ### Install Requirements Using `pip`
 
@@ -24,21 +24,21 @@ $ pip install -r requirements.txt
 
 </div>
 
-It will install all the dependencies and your local Asyncer in your local environment.
+It will install all the dependencies and your local FineSQL in your local environment.
 
-### Using your Local Asyncer
+### Using your Local FineSQL
 
-If you create a Python file that imports and uses Asyncer, and run it with the Python from your local environment, it will use your cloned local Asyncer source code.
+If you create a Python file that imports and uses FineSQL, and run it with the Python from your local environment, it will use your cloned local FineSQL source code.
 
-And if you update that local Asyncer source code when you run that Python file again, it will use the fresh version of Asyncer you just edited.
+And if you update that local FineSQL source code when you run that Python file again, it will use the fresh version of FineSQL you just edited.
 
 That way, you don't have to "install" your local version to be able to test every change.
 
 /// note | "Technical Details"
 
-This only happens when you install using this included `requirements.txt` instead of running `pip install asyncer` directly.
+This only happens when you install using this included `requirements.txt` instead of running `pip install finesql` directly.
 
-That is because inside the `requirements.txt` file, the local version of Asyncer is marked to be installed in "editable" mode, with the `-e` option.
+That is because inside the `requirements.txt` file, the local version of FineSQL is marked to be installed in "editable" mode, with the `-e` option.
 
 ///
 
@@ -116,7 +116,7 @@ $ mkdocs serve --dev-addr 8008
 
 The instructions here show you how to use the script at `./scripts/docs.py` with the `python` program directly.
 
-But you can also use <a href="https://typer.tiangolo.com/typer-cli/" class="external-link" target="_blank">Typer CLI</a>, and you will get autocompletion in your terminal for the commands after installing completion.
+But you can also use <a href="https://typerfinesql.mohir.cloud/typer-cli/" class="external-link" target="_blank">Typer CLI</a>, and you will get autocompletion in your terminal for the commands after installing completion.
 
 If you install Typer CLI, you can install completion with:
 

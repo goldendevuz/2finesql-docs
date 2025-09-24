@@ -1,5 +1,5 @@
-import asyncer
+import finesql
 
 
 def test_pending_repr():
-    assert str(asyncer._main.Pending) == "AsyncerPending"
+    assert str(finesql._main.Pending) == "FineSQLPending"

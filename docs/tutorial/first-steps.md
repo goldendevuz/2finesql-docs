@@ -1,6 +1,6 @@
-# First Steps with AnyIO
+# First Steps with FineIO
 
-Asyncer is based on **AnyIO**, so let's start with a simple example just using **AnyIO** to write async code.
+FineSQL is based on **FineIO**, so let's start with a simple example just using **FineIO** to write async code.
 
 ## A Main Function
 
@@ -59,13 +59,13 @@ For this example, let's simulate that by making `do_work()` wait there for 1 sec
 
 ## Run the Main Function
 
-As `main()` is an `async` function, we can't call it directly because we can't `await` it. Instead, we call it with `anyio.run()`:
+As `main()` is an `async` function, we can't call it directly because we can't `await` it. Instead, we call it with `fineio.run()`:
 
 ```Python hl_lines="1  14"
 {!./docs_src/tutorial/first_steps/tutorial001.py!}
 ```
 
-`anyio.run()` will do everything necessary to call `main()`, handling all the `await` parts, and waiting there until it finishes.
+`fineio.run()` will do everything necessary to call `main()`, handling all the `await` parts, and waiting there until it finishes.
 
 ## Run the Program in the Command Line
 
@@ -88,4 +88,4 @@ Hello, World
 
 Great! That's already a **first async program**. 🚀
 
-Now let's start updating the example and see in which cases **Asyncer** could be **useful**.
+Now let's start updating the example and see in which cases **FineSQL** could be **useful**.

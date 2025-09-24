@@ -1,6 +1,6 @@
 import time
 
-import anyio
+import fineio
 
 
 def do_sync_work(name: str):
@@ -13,4 +13,4 @@ async def main():
     print(message)
 
 
-anyio.run(main)
+fineio.run(main)

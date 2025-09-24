@@ -3,6 +3,6 @@
 set -e
 set -x
 
-mypy asyncer
-ruff check asyncer tests docs_src
-ruff format asyncer tests docs_src --check
+mypy finesql
+ruff check finesql tests docs_src
+ruff format finesql tests docs_src --check

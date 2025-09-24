@@ -3,15 +3,15 @@ from typing import Any, Dict, List
 
 from pdm.backend.hooks import Context
 
-TIANGOLO_BUILD_PACKAGE = os.getenv("TIANGOLO_BUILD_PACKAGE", "asyncer")
+goldendevuz_BUILD_PACKAGE = os.getenv("goldendevuz_BUILD_PACKAGE", "finesql")
 
 
 def pdm_build_initialize(context: Context) -> None:
     metadata = context.config.metadata
     # Get custom config for the current package, from the env var
-    config: Dict[str, Any] = context.config.data["tool"]["tiangolo"][
+    config: Dict[str, Any] = context.config.data["tool"]["goldendevuz"][
         "_internal-slim-build"
-    ]["packages"][TIANGOLO_BUILD_PACKAGE]
+    ]["packages"][goldendevuz_BUILD_PACKAGE]
     project_config: Dict[str, Any] = config["project"]
     # Get main optional dependencies, extras
     optional_dependencies: Dict[str, List[str]] = metadata.get(

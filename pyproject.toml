@@ -3,18 +3,16 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [project]
-name = "asyncer"
+name = "finesql"
 dynamic = ["version"]
-description = "Asyncer, async and await, focused on developer experience."
+description = "FineSQL, async and await, focused on developer experience."
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-    { name = "Sebastián Ramírez", email = "tiangolo@gmail.com" },
+    { name = "Abdulmajid Yunus", email = "goldendevuz@gmail.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
-    "Framework :: AsyncIO",
-    "Framework :: Trio",
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
     "Intended Audience :: Information Technology",
@@ -32,19 +30,19 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "anyio >=3.4.0,<5.0",
+    "fineio >=3.4.0,<5.0",
     "typing_extensions >=4.8.0; python_version < '3.10'"
 ]
 
 [project.urls]
-Homepage = "https://github.com/fastapi/asyncer"
-Documentation = "https://asyncer.tiangolo.com"
-Repository = "https://github.com/fastapi/asyncer"
-Issues = "https://github.com/fastapi/asyncer/issues"
-Changelog = "https://asyncer.tiangolo.com/release-notes/"
+Homepage = "https://github.com/goldendevuz/finesql"
+Documentation = "https://finesql.mohir.cloud"
+Repository = "https://github.com/goldendevuz/finesql"
+Issues = "https://github.com/goldendevuz/finesql/issues"
+Changelog = "https://finesql.mohir.cloud/release-notes/"
 
 [tool.pdm]
-version = { source = "file", path = "asyncer/__init__.py" }
+version = { source = "file", path = "finesql/__init__.py" }
 distribution = true
 
 [tool.pdm.build]
@@ -55,13 +53,13 @@ source-includes = [
     "scripts/",
     ]
 
-[tool.tiangolo._internal-slim-build.packages.asyncer-slim.project]
-name = "asyncer-slim"
+[tool.goldendevuz._internal-slim-build.packages.finesql-slim.project]
+name = "finesql-slim"
 
-[tool.tiangolo._internal-slim-build.packages.asyncer]
+[tool.goldendevuz._internal-slim-build.packages.finesql]
 # include-optional-dependencies = ["standard"]
 
-[tool.tiangolo._internal-slim-build.packages.asyncer.project]
+[tool.goldendevuz._internal-slim-build.packages.finesql.project]
 optional-dependencies = {}
 
 [tool.coverage.run]
@@ -70,7 +68,7 @@ data_file = "coverage/.coverage"
 source = [
     "docs_src",
     "tests",
-    "asyncer"
+    "finesql"
 ]
 context = '${CONTEXT}'
 dynamic_context = "test_function"
@@ -116,7 +114,7 @@ ignore = [
 # "__init__.py" = ["F401"]
 
 [tool.ruff.lint.isort]
-known-third-party = ["asyncer", "anyio"]
+known-third-party = ["finesql", "fineio"]
 
 [tool.ruff.lint.pyupgrade]
 # Preserve types, even if a file imports `from __future__ import annotations`.

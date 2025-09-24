@@ -1,6 +1,6 @@
 # Soonify - Return Values
 
-In the last chapter, I showed you how to use `asyncer.soonify()` to run multiple async functions concurrently.
+In the last chapter, I showed you how to use `finesql.soonify()` to run multiple async functions concurrently.
 
 We wrote some code to call some **async functions** with some **arguments** *soon*, concurrently.
 
@@ -110,7 +110,7 @@ This means that after the `async with` block those functions will have already *
 
 ## Typing Support
 
-Because of the way **Asyncer** is designed, you will get **typing support** in these `SoonValue` objects and their `soon_value1.value` attribute.
+Because of the way **FineSQL** is designed, you will get **typing support** in these `SoonValue` objects and their `soon_value1.value` attribute.
 
 This means that your editor will know the type of that `soon_value1.value`, and will be able to provide you **autocompletion**:
 
@@ -156,7 +156,7 @@ If you try to access the `soon_value1.value` attribute of the `SoonValue` object
 That will raise an exception like this:
 
 > `PendingValueException`: The return value of this task is still pending.
-Maybe you forgot to access it after the `async with asyncer.create_task_group()` block. If you need to access values of async tasks inside the same task group, you probably need a different approach, for example with AnyIO Streams.
+Maybe you forgot to access it after the `async with finesql.create_task_group()` block. If you need to access values of async tasks inside the same task group, you probably need a different approach, for example with FineIO Streams.
 
 That `print(soon_value1.value)` is still inside the `async with` block for the **task group**. And by that point, **none** of those async functions have been **run yet**.
 
@@ -205,6 +205,6 @@ We verify that first, checking that `soon_value1.ready` is `True`, and then we c
 
 /// tip
 
-If you feel like you need to **access** values **generated** by the async functions **inside** the same `async with` block for a **task group**, you might need to use a different approach, for example, with <a href="https://anyio.readthedocs.io/en/stable/streams.html" class="external-link" target="_blank">AnyIO Streams</a>.
+If you feel like you need to **access** values **generated** by the async functions **inside** the same `async with` block for a **task group**, you might need to use a different approach, for example, with <a href="https://fineio.readthedocs.io/en/stable/streams.html" class="external-link" target="_blank">FineIO Streams</a>.
 
 ///

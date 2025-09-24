@@ -47,11 +47,11 @@ But the calls to `do_work()` are **not concurrent** inside of `get_data()`.
 
 ## Async Code - Concurrent
 
-Let's now use **Asyncer** to run these **3 functions concurrently**. 🎉
+Let's now use **FineSQL** to run these **3 functions concurrently**. 🎉
 
 ### Task Group
 
-Use **Asyncer**'s `create_task_group()` in an `async with` block to create a **task group** object:
+Use **FineSQL**'s `create_task_group()` in an `async with` block to create a **task group** object:
 
 ```Python hl_lines="3  8"
 # Code above omitted 👆
@@ -149,7 +149,7 @@ Python will wait for all that to end in that `async with` block. It's like if th
 
 Python will start with the first async function call to `do_work()` with the parameters `name="Yury"`.
 
-It will start that `anyio.sleep(1)` and it will notice the `await` there:
+It will start that `fineio.sleep(1)` and it will notice the `await` there:
 
 ```Python hl_lines="4"
 # Code above omitted 👆
@@ -218,7 +218,7 @@ If you run the program in the **command line**, you will see that it will be sil
 
 And then it will print about **everything at once**.
 
-This is because Python was **waiting** for all those `anyio.sleep(1)` calls **concurrently**.
+This is because Python was **waiting** for all those `fineio.sleep(1)` calls **concurrently**.
 
 So, Python was **waiting 1 second** in **3 places**. But in each of those, it **started waiting at around the same time**, so it will only **take around 1 second** for it to run, **instead of 3 seconds**:
 
@@ -240,7 +240,7 @@ Hello, Alex
 
 ## Type Support
 
-Now, because of the way **Asyncer** is designed, you will get typing support for your code.
+Now, because of the way **FineSQL** is designed, you will get typing support for your code.
 
 This means that you will have **autocompletion** in your editor for the original arguments of the async function to call:
 

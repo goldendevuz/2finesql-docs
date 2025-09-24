@@ -61,7 +61,7 @@ jobs:
         if: hashFiles('./site/*')
         id: deploy
         env:
-          PROJECT_NAME: asyncer
+          PROJECT_NAME: finesql
           BRANCH: ${{ ( github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.head_branch == 'main' && 'main' ) || ( github.event.workflow_run.head_sha ) }}
         uses: cloudflare/wrangler-action@v3
         with:

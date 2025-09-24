@@ -1,9 +1,9 @@
-import anyio
-import asyncer
+import fineio
+import finesql
 
 
 async def do_work(name: str):
-    await anyio.sleep(1)
+    await fineio.sleep(1)
     return f"Hello, {name}"
 
 
@@ -12,5 +12,5 @@ async def main(name: str):
     return result
 
 
-result = asyncer.runnify(main)(name="World")
+result = finesql.runnify(main)(name="World")
 print(result)

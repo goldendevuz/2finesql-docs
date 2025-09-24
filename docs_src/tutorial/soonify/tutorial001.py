@@ -1,8 +1,8 @@
-import anyio
+import fineio
 
 
 async def do_work(name: str):
-    await anyio.sleep(1)
+    await fineio.sleep(1)
     print(f"Hello, {name}")
 
 
@@ -16,4 +16,4 @@ async def main():
     await get_data()
 
 
-anyio.run(main)
+fineio.run(main)

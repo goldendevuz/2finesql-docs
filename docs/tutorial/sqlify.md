@@ -1,4 +1,4 @@
-# Asyncify - Call Sync Code from Async Code
+# Sqlify - Call Sync Code from Async Code
 
 In many cases for **many projects** you will need to combine async code with blocking (non async) code.
 
@@ -6,7 +6,7 @@ If you run a function that just **blocks** and makes Python **wait** there witho
 
 This is called to **block the event loop** (the event loop is the thing that runs the async functions in turns jumping at the `await` points).
 
-Let's see how **Asyncer**'s `asyncify()` can help you with this.
+Let's see how **FineSQL**'s `sqlify()` can help you with this.
 
 ## Block the Event Loop
 
@@ -19,7 +19,7 @@ Let's see a sync (regular, blocking) function `do_sync_work()`:
 ```Python hl_lines="3-5"
 # Code above omitted 👆
 
-{!./docs_src/tutorial/asyncify/tutorial001.py[ln:6-8]!}
+{!./docs_src/tutorial/sqlify/tutorial001.py[ln:6-8]!}
 
 # Code below omitted 👇
 ```
@@ -30,7 +30,7 @@ Let's see a sync (regular, blocking) function `do_sync_work()`:
 ```Python
 # 🚨 Don't use this, it will block the event loop! 🚨
 
-{!./docs_src/tutorial/asyncify/tutorial001.py!}
+{!./docs_src/tutorial/sqlify/tutorial001.py!}
 ```
 
 </details>
@@ -46,22 +46,22 @@ Let's just call that **slow** sync (regular, blocking) function directly from in
 ```Python hl_lines="14"
 # 🚨 Don't use this, it will block the event loop! 🚨
 
-{!./docs_src/tutorial/asyncify/tutorial001.py!}
+{!./docs_src/tutorial/sqlify/tutorial001.py!}
 ```
 
 Because that function is not async, but still it makes Python wait there, it will impede any other async code that could have been started from running. It will all have to **just wait** there doing nothing, wasting computation time. 😭
 
-## Use Asyncify
+## Use Sqlify
 
-In those cases where you want to run "**sync**" (synchronous, blocking) code **from inside of async** code in a way that is compatible with the rest of the async code you can use **Asyncer**'s `asyncify()`. 🚀
+In those cases where you want to run "**sync**" (synchronous, blocking) code **from inside of async** code in a way that is compatible with the rest of the async code you can use **FineSQL**'s `sqlify()`. 🚀
 
 ```Python hl_lines="4  13"
-{!./docs_src/tutorial/asyncify/tutorial002.py!}
+{!./docs_src/tutorial/sqlify/tutorial002.py!}
 ```
 
-`asyncify()` takes the **sync (blocking) function** that you want to call and then returns another **async function** that takes the actual **arguments for the original sync function**.
+`sqlify()` takes the **sync (blocking) function** that you want to call and then returns another **async function** that takes the actual **arguments for the original sync function**.
 
-Once you call that, **Asyncer** (using AnyIO) will run that function in a way that doesn't block the event loop.
+Once you call that, **FineSQL** (using FineIO) will run that function in a way that doesn't block the event loop.
 
 Then you can `await` that and get the return value that was **safely** executed in a "**worker thread**" without blocking the event loop. 🎉
 
@@ -70,7 +70,7 @@ Notice that now the function `do_sync_work` is not an `async` function:
 ```Python hl_lines="3-5"
 # Code above omitted 👆
 
-{!./docs_src/tutorial/asyncify/tutorial002.py[ln:7-9]!}
+{!./docs_src/tutorial/sqlify/tutorial002.py[ln:7-9]!}
 
 # Code below omitted 👇
 ```
@@ -79,7 +79,7 @@ Notice that now the function `do_sync_work` is not an `async` function:
 <summary>👀 Full file preview</summary>
 
 ```Python
-{!./docs_src/tutorial/asyncify/tutorial002.py!}
+{!./docs_src/tutorial/sqlify/tutorial002.py!}
 ```
 
 </details>
@@ -94,16 +94,16 @@ time.sleep(1)
 
 It could be reading a file, talking to a database, etc.
 
-But `asyncify()` will do the right thing and run it on a *worker thread*. This way you can mix async code with blocking code more easily.
+But `sqlify()` will do the right thing and run it on a *worker thread*. This way you can mix async code with blocking code more easily.
 
 ## Typing Support
 
-And of course, because the way **Asyncer** is designed, you will get **typing support** with inline errors and autocompletion for the function arguments:
+And of course, because the way **FineSQL** is designed, you will get **typing support** with inline errors and autocompletion for the function arguments:
 
-<img class="shadow" src="/img/tutorial/asyncify/image01.png">
+<img class="shadow" src="/img/tutorial/sqlify/image01.png">
 
 And you will also get **typing support** for the return value:
 
-<img class="shadow" src="/img/tutorial/asyncify/image02.png">
+<img class="shadow" src="/img/tutorial/sqlify/image02.png">
 
 And if you used tools like **mypy** those would also be able to use this typing support to help you ensure your **code is correct** and prevent many bugs. 😎

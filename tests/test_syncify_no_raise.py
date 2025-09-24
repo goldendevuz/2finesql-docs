@@ -2,8 +2,8 @@ import threading
 from dataclasses import dataclass
 from typing import List
 
-import anyio
-from asyncer import asyncify, syncify
+import fineio
+from finesql import sqlify, syncify
 
 
 @dataclass
@@ -36,7 +36,7 @@ def test_syncify_no_raise_async():
             caller_func="do_async_work",
         )
         reports.append(report)
-        await asyncify(do_sub_sync_work)()
+        await sqlify(do_sub_sync_work)()
 
     def do_sync_work():
         own_report = Report(
@@ -52,7 +52,7 @@ def test_syncify_no_raise_async():
             caller_func="main",
         )
         reports.append(own_report)
-        await asyncify(do_sync_work)()
+        await sqlify(do_sync_work)()
 
     def sync_main():
         own_report = Report(
@@ -62,7 +62,7 @@ def test_syncify_no_raise_async():
         reports.append(own_report)
         do_sync_work()
 
-    anyio.run(main)
+    fineio.run(main)
     sync_main()
     main_thread_id = threading.get_ident()
     assert reports[0].caller_func == "main"
