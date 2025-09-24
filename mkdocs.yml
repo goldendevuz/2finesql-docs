@@ -25,6 +25,7 @@ theme:
     toggle:
       icon: material/lightbulb-outline
       name: Switch to system preference
+  
   features:
   - content.code.annotate
   - content.code.copy
@@ -53,6 +54,8 @@ theme:
   logo: img/icon-white.svg
   favicon: img/favicon.png
   language: en
+  custom_dir: overrides
+
 repo_name: goldendevuz/finesql
 repo_url: https://github.com/goldendevuz/finesql
 plugins:
@@ -148,6 +151,8 @@ extra:
     link: https://gold.mohir.cloud
   version:
     provider: mike
+    default: latest
+    alias: true
 
 extra_css:
   - css/termynal.css
