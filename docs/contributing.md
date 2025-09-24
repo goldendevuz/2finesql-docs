@@ -8,7 +8,7 @@ If you already cloned the <a href="https://github.com/goldendevuz/finesql" class
 
 ### Virtual Environment
 
-Follow the instructions to create and activate a virtual environment as described in the <a href="https://finesql.mohir.cloud/virtual-environments/" class="external-link" target="_blank">FastAPI page on Virtual Environments</a> for the internal code of `finesql`.
+Follow the instructions to create and activate a virtual environment as described in the <a href="https://finesql.mohir.cloud/virtual-environments/" class="external-link" target="_blank">FineSQL page on Virtual Environments</a> for the internal code of `finesql`.
 
 ### Install Requirements Using `pip`
 
