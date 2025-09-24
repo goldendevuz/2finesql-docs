@@ -146,6 +146,8 @@ extra:
     link: https://medium.com/@goldendevuz
   - icon: fontawesome/solid/globe
     link: https://gold.mohir.cloud
+  version:
+    provider: mike
 
 extra_css:
   - css/termynal.css
